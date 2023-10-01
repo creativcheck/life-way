@@ -7,6 +7,7 @@ public class PackageData : ScriptableObject
 
 {
     [SerializeField]
+    [TextAreaAttribute]
     private string russianText;
 
     public string RussianText
@@ -18,6 +19,7 @@ public class PackageData : ScriptableObject
     }
 
     [SerializeField]
+    [TextAreaAttribute]
     private string englishText;
     public string EnglishText
     {
