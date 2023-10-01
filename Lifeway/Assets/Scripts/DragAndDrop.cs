@@ -39,7 +39,6 @@ public class DragAndDrop : MonoBehaviour
                 StartCoroutine(DragUpdate(hit.collider.gameObject));
             }
         }
-
     }
     private IEnumerator DragUpdate(GameObject clickedObject)
     {
