@@ -32,9 +32,19 @@ public class Package : MonoBehaviour
 
     private void Start()
     {
-        speedText.text = packageData.BustSpeed.ToString ();
+        RedrawData();
+    }
+
+    public void UpdateData(PackageData newPackageData)
+    {
+        packageData = newPackageData;
+        RedrawData();
+    }
+
+    private void RedrawData()
+    {
+        speedText.text = packageData.BustSpeed.ToString();
         icon.sprite = packageData.Icon;
         textLetter.text = packageData.RussianText;
-   
     }
 }
