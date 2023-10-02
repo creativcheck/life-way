@@ -7,6 +7,7 @@ public class Storage : MonoBehaviour
     [SerializeField] private GameObject packagePrefab;
     [SerializeField] private PackageData[] packagesData;
     [SerializeField] private float delayGivePackage, randomBetweenDelay;
+    [SerializeField] private Transform spawnPoint;
 
     private float timer;
     private ObjectPool _packagesPool;
@@ -21,7 +22,7 @@ public class Storage : MonoBehaviour
         {
             _packagesPool.GetPool()[i].GetComponent<Package>().UpdateData(packagesData[i]);
         }
-
+        
         timer = delayGivePackage + (Random.value * randomBetweenDelay);
     }
 
@@ -33,8 +34,13 @@ public class Storage : MonoBehaviour
         }
         else
         {
-
+            GivePackage();
         }
+    }
+
+    private void GivePackage()
+    {
+
     }
 
 
@@ -50,7 +56,7 @@ public class ObjectPool
         for (int i = 0; i < amount; i++)
         {
             tmp = GameObject.Instantiate(prefabObjectToPool);
-            //tmp.SetActive(false);
+            tmp.SetActive(false);
             PooledObjects.Add(tmp);
         }
     }
