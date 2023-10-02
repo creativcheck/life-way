@@ -33,12 +33,18 @@ public class Shelf : MonoBehaviour
             if (packages[i] == null)
             {
                 packages[i] = package;
+                package.transform.parent = null;
                 package.transform.position = pos;
                 package.transform.rotation = Quaternion.AngleAxis(90, Vector3.up);
                 storage.PlacePackage();
                 break;
             }
         }
+    }
+
+    public void PrePlacePackege()
+    {
+        storage.OpenPackage();
     }
 
     public void BurnPackages()

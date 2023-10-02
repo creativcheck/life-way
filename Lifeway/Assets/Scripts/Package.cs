@@ -18,9 +18,10 @@ public class Package : MonoBehaviour
     private TextMeshProUGUI textLetter;
 
     [SerializeField]
-    private Image icon;
+    private Image icon, letterIcon;
 
     private Camera mainCamera;
+    private Animator animator;
 
     [HideInInspector] public PackageData PackageData { get { return packageData; } }
     [HideInInspector] public Vector3 place;
@@ -40,6 +41,7 @@ public class Package : MonoBehaviour
     private void Start()
     {
         mainCamera = Camera.main;
+        animator = GetComponent<Animator>();
         RedrawData();
     }
 
@@ -63,17 +65,36 @@ public class Package : MonoBehaviour
         {
             if (hit.collider == gameObject.GetComponent<Collider>())
             {
-                PlacePackage();
+                mouseClick.performed -= GetPackage;
+                mouseClick.Disable();
+                OpenPackage();
             }
         }
 
-        mouseClick.performed -= GetPackage;
-        mouseClick.Disable();
     }
 
-    private void PlacePackage()
+    private void OpenPackage()
+    {
+        animator.SetBool("Open", true);
+        gameObject.transform.parent = mainCamera.transform.GetChild(0);
+        gameObject.transform.localPosition = Vector3.zero;
+        gameObject.transform.localRotation = Quaternion.Euler(0,0,0);
+        shelf.PrePlacePackege();
+
+    }
+
+    public void AddEventToPlacePackage()
+    {
+        mouseClick.performed += PlacePackage;
+        mouseClick.Enable();
+    }
+
+    private void PlacePackage(InputAction.CallbackContext context)
     {
         shelf.PlacePackage(this);
+        animator.SetBool("Open", false);
+        mouseClick.performed -= PlacePackage;
+        mouseClick.Disable();
     }
 
     public void UpdateData(PackageData newPackageData)
@@ -86,6 +107,11 @@ public class Package : MonoBehaviour
     {
         speedText.text = packageData.BoostSpeed.ToString();
         icon.sprite = packageData.Icon;
-        textLetter.text = packageData.RussianText;
+        letterIcon.sprite = packageData.Icon;
+
+        if(GameStats.Instance.language == Lang.Rus)
+            textLetter.text = packageData.RussianText;
+        else
+            textLetter.text = packageData.EnglishText;
     }
 }

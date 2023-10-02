@@ -12,7 +12,7 @@ public class Storage : MonoBehaviour
     [SerializeField] private Shelf[] shelfs;
 
     private float timer;
-    private bool giving;
+    private bool giving, timerTick;
     private ObjectPool _packagesPool;
     private int ShelfToPlace, indexOnShelfToPlace;
 
@@ -22,16 +22,17 @@ public class Storage : MonoBehaviour
     {
         _packagesPool = new ObjectPool(packagesData.Length, packagePrefab, packagesData);
 
+        timerTick = true;
         timer = delayGivePackage + (Random.value * randomBetweenDelay);
     }
 
     private void Update()
     {
-        if (timer > 0)
+        if (timer > 0 && timerTick)
         {
             timer -= Time.deltaTime;
         }
-        else
+        else if(timerTick)
         {
             if (giving)
             {
@@ -52,7 +53,13 @@ public class Storage : MonoBehaviour
         _packagesPool.DestroyPackage(false);
         timer = delayGivePackage + (Random.value * randomBetweenDelay);
         giving = false;
+        timerTick = true;
         currentPackage = null;
+    }
+
+    public void OpenPackage()
+    {
+        timerTick = false;
     }
 
     private void GivePackage()
