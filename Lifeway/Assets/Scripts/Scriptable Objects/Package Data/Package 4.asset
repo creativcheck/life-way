@@ -20,6 +20,6 @@ MonoBehaviour:
   englishText: I remember the scent of freshly baked goods, tender hugs, and the
     coziness of my childhood home.
   icon: {fileID: 21300000, guid: 38854ac63c34d6b42a0c25d33b29e9db, type: 3}
-  bustSpeed: 5
+  boostSpeed: 1
   storyType: 1
   placeNumberInHistory: 1

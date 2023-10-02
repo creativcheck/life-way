@@ -20,6 +20,6 @@ MonoBehaviour:
   englishText: Turbo boost, the sound of a roaring engine, comfortable seats. It's
     not a car, it's a fairytale!
   icon: {fileID: 21300000, guid: 3977f48f0de3c374f9744ff778b8bc21, type: 3}
-  bustSpeed: 5
+  boostSpeed: 1
   storyType: 4
   placeNumberInHistory: 1

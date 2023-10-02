@@ -40,18 +40,18 @@ public class PackageData : ScriptableObject
     }
 
     [SerializeField]
-    private float bustSpeed;
-    public float BustSpeed
+    private float boostSpeed;
+    public float BoostSpeed
     {
         get
         {
-            return bustSpeed;
+            return boostSpeed;
         }
     }
 
     [SerializeField]
     private StoryType storyType;
-    public StoryType StoryType1
+    public StoryType StoryType
     {
         get
         {

@@ -19,6 +19,6 @@ MonoBehaviour:
   englishText: Now I only wake up to the alarm clock. It feels like losing a close
     friend from life.
   icon: {fileID: 21300000, guid: 6d23acc3a608a2d44b788fa9bacf8859, type: 3}
-  bustSpeed: 10
+  boostSpeed: 7
   storyType: 5
   placeNumberInHistory: 3

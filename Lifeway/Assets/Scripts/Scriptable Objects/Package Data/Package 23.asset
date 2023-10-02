@@ -21,6 +21,6 @@ MonoBehaviour:
   englishText: I was so bored on that job. Maybe that's why they fired me? But still,
     the boss is such a jerk!
   icon: {fileID: 21300000, guid: 74bd7f93d9dd4c84c933dd8e3da8a082, type: 3}
-  bustSpeed: 7
+  boostSpeed: 3
   storyType: 7
   placeNumberInHistory: 2

@@ -17,6 +17,6 @@ MonoBehaviour:
     \u0437\u0430\u043C\u0438\u0440\u0430\u0435\u0442 \u043E\u0442 \u0432\u043E\u043B\u043D\u0435\u043D\u0438\u044F."
   englishText: "Meeting at a caf\xE9, first glance, heart stops with excitement."
   icon: {fileID: 21300000, guid: c9ea557d28efe914487a38a697fbc739, type: 3}
-  bustSpeed: 5
+  boostSpeed: 1
   storyType: 0
   placeNumberInHistory: 1

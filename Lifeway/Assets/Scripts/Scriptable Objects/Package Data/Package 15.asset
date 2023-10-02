@@ -19,6 +19,6 @@ MonoBehaviour:
   englishText: Now I can write with both my left and right hand. Am-bi-dex-trous!
     Everything is almost healed.
   icon: {fileID: 21300000, guid: fcbc77c1e746ff840b5b98aec2fa648b, type: 3}
-  bustSpeed: 10
+  boostSpeed: 7
   storyType: 4
   placeNumberInHistory: 3

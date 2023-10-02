@@ -17,6 +17,6 @@ MonoBehaviour:
     \u0442\u043E\u043B\u044C\u043A\u043E \u043C\u0435\u0447\u0442\u043E\u0439..."
   englishText: It's a childhood dream, better left as just a dream...
   icon: {fileID: 21300000, guid: 25c21a615cc7722469f2393bc2ef6f5f, type: 3}
-  bustSpeed: 5
+  boostSpeed: 1
   storyType: 3
   placeNumberInHistory: 1

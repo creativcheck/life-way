@@ -21,6 +21,6 @@ MonoBehaviour:
   englishText: Here's my favorite restaurant. And then I'll show my friends the old
     square and a quiet place with a beautiful view.
   icon: {fileID: 21300000, guid: 14c9aead713a7434f87f39168de4ba24, type: 3}
-  bustSpeed: 10
+  boostSpeed: 7
   storyType: 2
   placeNumberInHistory: 3

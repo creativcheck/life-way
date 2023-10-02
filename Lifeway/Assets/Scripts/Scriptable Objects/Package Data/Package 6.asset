@@ -17,6 +17,6 @@ MonoBehaviour:
     \u0445\u043E\u0442\u044F \u0431\u044B \u043D\u0430 5 \u043C\u0438\u043D\u0443\u0442\u043E\u043A."
   englishText: It's always nice to visit my parents, even if it's just for 5 minutes.
   icon: {fileID: 21300000, guid: d268e2b17eb31a74a98d97fe187e7640, type: 3}
-  bustSpeed: 10
+  boostSpeed: 7
   storyType: 1
   placeNumberInHistory: 3

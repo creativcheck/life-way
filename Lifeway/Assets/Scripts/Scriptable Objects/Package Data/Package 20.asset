@@ -20,6 +20,6 @@ MonoBehaviour:
   englishText: What a rock concert all night long, and you're only 12?! Now I understand
     my mom and dad so well!
   icon: {fileID: 21300000, guid: 84ec69685badc7c46b0198a8cc6e7c25, type: 3}
-  bustSpeed: 7
+  boostSpeed: 3
   storyType: 6
   placeNumberInHistory: 2

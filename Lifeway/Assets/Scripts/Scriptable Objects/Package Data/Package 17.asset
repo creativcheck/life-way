@@ -17,6 +17,6 @@ MonoBehaviour:
     \u0414\u0430\u0439 \u043F\u043E\u0441\u043F\u0430\u0442\u044C!"
   englishText: Stop biting my legs! Enough! Let me sleep!
   icon: {fileID: 21300000, guid: 4fa5425ad75e1fe4a80673cf3311b6a3, type: 3}
-  bustSpeed: 7
+  boostSpeed: 3
   storyType: 5
   placeNumberInHistory: 2

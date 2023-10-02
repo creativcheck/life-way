@@ -19,6 +19,6 @@ MonoBehaviour:
     \u0441\u043A\u043E\u0432\u044B\u0432\u0430\u0435\u0442."
   englishText: I need money, any job will do. The fear of interviews paralyzes me.
   icon: {fileID: 21300000, guid: 5a4b4335b0a4fcc488107f541f7dbb6a, type: 3}
-  bustSpeed: 5
+  boostSpeed: 1
   storyType: 7
   placeNumberInHistory: 1

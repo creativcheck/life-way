@@ -20,6 +20,6 @@ MonoBehaviour:
   englishText: This should never happen at all, the overwhelming fear, I need to
     move away, even if it's just for a while.
   icon: {fileID: 21300000, guid: ee838f66a665b0f42a3d90afd7233aeb, type: 3}
-  bustSpeed: 5
+  boostSpeed: 1
   storyType: 2
   placeNumberInHistory: 1

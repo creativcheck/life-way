@@ -55,7 +55,8 @@ QualitySettings:
     terrainBillboardStart: 50
     terrainFadeLength: 5
     terrainMaxTrees: 50
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - WebGL
   - serializedVersion: 3
     name: Balanced
     pixelLightCount: 1
@@ -105,7 +106,8 @@ QualitySettings:
     terrainBillboardStart: 50
     terrainFadeLength: 5
     terrainMaxTrees: 50
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - WebGL
   - serializedVersion: 3
     name: High Fidelity
     pixelLightCount: 2
@@ -169,7 +171,7 @@ QualitySettings:
     Server: 0
     Stadia: 2
     Standalone: 2
-    WebGL: 1
+    WebGL: 2
     Windows Store Apps: 2
     XboxOne: 2
     iPhone: 1

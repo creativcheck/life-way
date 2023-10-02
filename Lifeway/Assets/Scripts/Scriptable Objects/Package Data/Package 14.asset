@@ -17,6 +17,6 @@ MonoBehaviour:
     \u0446\u0435\u043B\u044B."
   englishText: Boom! That hurt so much! I hope everyone else is okay.
   icon: {fileID: 21300000, guid: 11c0ad4673940f349bcf27c396865d58, type: 3}
-  bustSpeed: 7
+  boostSpeed: 3
   storyType: 4
   placeNumberInHistory: 2

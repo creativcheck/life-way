@@ -20,6 +20,6 @@ MonoBehaviour:
   englishText: It wasn't the dog that broke mom's cup. It was all my doing, that
     day mom really hurt my feelings.
   icon: {fileID: 21300000, guid: 8420e8b72a2d2b94cad1feb43e3ae7f4, type: 3}
-  bustSpeed: 7
+  boostSpeed: 3
   storyType: 1
   placeNumberInHistory: 2

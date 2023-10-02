@@ -20,6 +20,6 @@ MonoBehaviour:
   englishText: When a dream comes true, it becomes reality and makes room for a new
     dream.
   icon: {fileID: 21300000, guid: 476f3a72e7e3cc644a1fcbc491f5abf2, type: 3}
-  bustSpeed: 10
+  boostSpeed: 7
   storyType: 3
   placeNumberInHistory: 3
