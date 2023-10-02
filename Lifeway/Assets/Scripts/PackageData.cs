@@ -73,9 +73,11 @@ public class PackageData : ScriptableObject
 public enum StoryType
 {
     Love,
-    SelfTransformation,
-    Betrayal,
-    DreamAchievement,
-    Loyalty,
-    OvercomingFear
+    Parents,
+    Emigration,
+    Dream,
+    BrokenArm,
+    Cat,
+    Ñhild,
+    Job
 }

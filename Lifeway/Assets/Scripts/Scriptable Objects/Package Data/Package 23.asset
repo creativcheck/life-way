@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ebca9664299d34fbe4388a8f51a38f, type: 3}
+  m_Name: Package 23
+  m_EditorClassIdentifier: 
+  russianText: "\u041C\u043D\u0435 \u0431\u044B\u043B\u043E \u043D\u0430 \u043D\u0435\u0439
+    \u0442\u0430\u043A \u0441\u043A\u0443\u0447\u043D\u043E. \u041C\u043E\u0436\u0435\u0442
+    \u0431\u044B\u0442\u044C \u043F\u043E\u044D\u0442\u043E\u043C\u0443 \u043C\u0435\u043D\u044F
+    \u0443\u0432\u043E\u043B\u0438\u043B\u0438? \u041D\u043E \u0432\u0441\u0435 \u0440\u0430\u0432\u043D\u043E
+    \u043D\u0430\u0447\u0430\u043B\u044C\u043D\u0438\u043A \u0442\u043E\u0442 \u0435\u0449\u0435
+    \u043A\u043E\u0437\u0435\u043B!"
+  englishText: I was so bored on that job. Maybe that's why they fired me? But still,
+    the boss is such a jerk!
+  icon: {fileID: 21300000, guid: 74bd7f93d9dd4c84c933dd8e3da8a082, type: 3}
+  bustSpeed: 7
+  storyType: 7
+  placeNumberInHistory: 2
