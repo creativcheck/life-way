@@ -8,8 +8,7 @@ using UnityEngine.InputSystem;
 public class Package : MonoBehaviour
 {
     [SerializeField] private InputAction mouseClick;
-    [SerializeField]
-    private PackageData packageData;
+    [SerializeField] private PackageData packageData;
 
     [SerializeField]
     private TextMeshProUGUI speedText;
