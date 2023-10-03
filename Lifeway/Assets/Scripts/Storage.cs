@@ -32,7 +32,7 @@ public class Storage : MonoBehaviour
         {
             timer -= Time.deltaTime;
         }
-        else if(timerTick)
+        else if(timerTick && !GameStats.Instance.ending)
         {
             if (giving)
             {
@@ -186,9 +186,9 @@ public class Storage : MonoBehaviour
             currentPackage.shelf = shelfs[ShelfToPlace];
 
             giving = true;
-            timer = timeToGive;
         }
 
+        timer = timeToGive;
     }
 
 

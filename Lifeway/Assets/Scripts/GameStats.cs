@@ -10,6 +10,7 @@ public class GameStats : MonoBehaviour
     public static GameStats Instance;
 
     public Lang language = Lang.Eng;
+    public bool ending;
     [SerializeField] private Button playBtn;
 
     private void Start()

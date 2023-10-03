@@ -79,7 +79,6 @@ public class Package : MonoBehaviour
         gameObject.transform.localPosition = Vector3.zero;
         gameObject.transform.localRotation = Quaternion.Euler(0,0,0);
         shelf.PrePlacePackege();
-
     }
 
     public void AddEventToPlacePackage()

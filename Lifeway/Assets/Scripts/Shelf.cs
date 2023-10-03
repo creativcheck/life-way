@@ -13,6 +13,7 @@ public class Shelf : MonoBehaviour
     [SerializeField] private InputAction mouseClick;
     [SerializeField] private GameObject panelTip;
     [SerializeField] private Transform button;
+    [SerializeField] private Map map;
     [SerializeField] private string RusTip, EngTip;
 
     public Package[] Packages { get { return packages; } }
@@ -126,14 +127,19 @@ public class Shelf : MonoBehaviour
 
     public void BurnPackages()
     {
+        float speedUpdate = 0;
+
         for (int i = 0; i < packages.Length; i++)
         {
             if (packages[i] != null)
             {
+                speedUpdate += packages[i].PackageData.BoostSpeed;
                 Destroy(packages[i].gameObject);
                 packages[i] = null;
             }
         }
+
+        map.ChangeSpeed(speedUpdate);
     }
 
 }

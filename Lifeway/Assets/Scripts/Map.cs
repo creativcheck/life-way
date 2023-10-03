@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Resources;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Map : MonoBehaviour
@@ -9,16 +10,18 @@ public class Map : MonoBehaviour
     [SerializeField] bool rotate;
     [SerializeField] Transform pointer;
     [SerializeField] float minPointerRot, maxPointerRot;
-    [SerializeField] float minSpeed, maxSpeed, speedReduce, speedDivisor;
-    [SerializeField] float Speed, RotationSpeed;
-    [SerializeField] Animation backAnimation;
+    [SerializeField] float minSpeed, maxSpeed, speedReduce, speedDivisor, endReduce, endLerp, timeToStop;
+    [SerializeField] float Speed, endSpeed, RotationSpeed;
+    [SerializeField] Animation backAnimation, endAnimation, cameraAnim;
     
     public Transform[] Points;
     public float rotationDistanceToPoint;
 
+    private float timerStop;
     private Transform currentPoint;
     private int index;
     private Vector3 direction;
+    private bool ending;
 
     void Start()
     {
@@ -37,7 +40,10 @@ public class Map : MonoBehaviour
             RotateTrain();
 
         Move();
-        UpdateSpeed();
+        if(Speed > 0)
+            UpdateSpeed();
+        else
+            cameraAnim["CameraShake"].speed = 0;
     }
 
     public void ChangeSpeed(float value)
@@ -48,10 +54,30 @@ public class Map : MonoBehaviour
 
     private void UpdateSpeed()
     {
-        Speed -= speedReduce;
-        Mathf.Clamp(Speed, minSpeed, maxSpeed);
+        if(cameraAnim["CameraShake"].speed == 0)
+            cameraAnim["CameraShake"].speed = 1;
 
-        //backAnimation.
+        if(ending)
+        {
+            
+            if(timerStop > 0)
+            {
+                timerStop -= Time.deltaTime;
+                Speed = Mathf.Lerp(Speed, endSpeed, endLerp);
+            }
+            else
+            {
+                Speed -= endReduce;
+            }
+        }
+        else
+        {
+            Speed -= speedReduce;
+        }
+        
+        Speed = Mathf.Clamp(Speed, minSpeed, maxSpeed);
+
+        backAnimation["Background"].speed = endAnimation["Background"].speed = Speed / 0.02f;
         pointer.localRotation = Quaternion.AngleAxis(minPointerRot + ((maxPointerRot-minPointerRot) * (Speed / maxSpeed)), Vector3.forward);
     }
 
@@ -70,6 +96,14 @@ public class Map : MonoBehaviour
             else
             {
                 currentPoint = Points[index];
+
+                if(index ==  Points.Length - 1)
+                {
+                    ending = true;
+                    timerStop = timeToStop;
+                    GameStats.Instance.ending = true;
+                    endAnimation.gameObject.SetActive(true);
+                }
             }
         }
     }
