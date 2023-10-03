@@ -202,7 +202,7 @@ Transform:
   m_GameObject: {fileID: 1894714901117799699}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.64, y: -0.571, z: 0}
+  m_LocalPosition: {x: -0.628, y: -0.621, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -622,7 +622,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: bbf9fdbef792fa245b4a85e7036e3508, type: 3}
   m_Color: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
   m_FlipX: 0
@@ -736,9 +736,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   train: {fileID: 1894714901117799699}
+  memoryPrefab: {fileID: 5752077769102817654, guid: 536a94343e778044ca9cb0d8479c8753,
+    type: 3}
   rotate: 0
-  Speed: 0.1
+  pointer: {fileID: 0}
+  minPointerRot: -190
+  maxPointerRot: 10
+  minSpeed: 0
+  maxSpeed: 0.06
+  speedReduce: 0.000004
+  speedDivisor: 400
+  endReduce: 0.0002
+  endLerp: 0.03
+  timeToStop: 9.5
+  Speed: 0.04
+  endSpeed: 0.04
   RotationSpeed: 3
+  backAnimation: {fileID: 0}
+  endAnimation: {fileID: 0}
+  cameraAnim: {fileID: 0}
   Points:
   - {fileID: 1393428356386119688}
   - {fileID: 474181849385204490}

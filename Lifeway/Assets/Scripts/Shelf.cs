@@ -129,11 +129,18 @@ public class Shelf : MonoBehaviour
     {
         float speedUpdate = 0;
 
+        if (packages[2] != null)
+        {
+            map.SpawnMemory(packages[2].PackageData.Icon);
+        }
+
         for (int i = 0; i < packages.Length; i++)
         {
             if (packages[i] != null)
             {
                 speedUpdate += packages[i].PackageData.BoostSpeed;
+
+
                 Destroy(packages[i].gameObject);
                 packages[i] = null;
             }

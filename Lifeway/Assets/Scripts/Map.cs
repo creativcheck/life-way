@@ -7,6 +7,7 @@ using UnityEngine;
 public class Map : MonoBehaviour
 {
     [SerializeField] GameObject train;
+    [SerializeField] GameObject memoryPrefab;
     [SerializeField] bool rotate;
     [SerializeField] Transform pointer;
     [SerializeField] float minPointerRot, maxPointerRot;
@@ -50,6 +51,11 @@ public class Map : MonoBehaviour
     {
         Speed += value / speedDivisor;
         Mathf.Clamp(Speed, minSpeed, maxSpeed);
+    }
+
+    public void SpawnMemory(Sprite iconSprite)
+    {
+        Instantiate(memoryPrefab, train.transform.position, Quaternion.identity, gameObject.transform).GetComponent<SpriteRenderer>().sprite = iconSprite;
     }
 
     private void UpdateSpeed()
