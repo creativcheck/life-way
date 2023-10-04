@@ -15,6 +15,7 @@ public class Shelf : MonoBehaviour
     [SerializeField] private Transform button;
     [SerializeField] private Map map;
     [SerializeField] private string RusTip, EngTip;
+    [SerializeField] Animator ovenAnim;
 
     public Package[] Packages { get { return packages; } }
 
@@ -133,6 +134,8 @@ public class Shelf : MonoBehaviour
         {
             map.SpawnMemory(packages[2].PackageData.Icon);
         }
+
+        ovenAnim.SetTrigger("Burn");
 
         for (int i = 0; i < packages.Length; i++)
         {

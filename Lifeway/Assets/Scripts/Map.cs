@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Resources;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -12,9 +13,12 @@ public class Map : MonoBehaviour
     [SerializeField] Transform pointer;
     [SerializeField] float minPointerRot, maxPointerRot;
     [SerializeField] float minSpeed, maxSpeed, speedReduce, speedDivisor, endReduce, endLerp, timeToStop;
-    [SerializeField] float Speed, endSpeed, RotationSpeed;
-    [SerializeField] Animation backAnimation, endAnimation, cameraAnim;
-    
+    [SerializeField] float Speed, endSpeed, RotationSpeed, mapFlyToCameraTime;
+    [SerializeField] Animation backAnimation, endAnimation, cameraAnim, fadeBlackAnimation;
+    [SerializeField][TextArea] string finalRu, finalEng;
+    [SerializeField] string finalTitleRu, finalTitleEng;
+    [SerializeField] TextMeshProUGUI finalTitle, finalTextField;
+
     public Transform[] Points;
     public float rotationDistanceToPoint;
 
@@ -22,7 +26,7 @@ public class Map : MonoBehaviour
     private Transform currentPoint;
     private int index;
     private Vector3 direction;
-    private bool ending;
+    private bool ending, death;
 
     void Start()
     {
@@ -44,7 +48,36 @@ public class Map : MonoBehaviour
         if(Speed > 0)
             UpdateSpeed();
         else
+        {
             cameraAnim["CameraShake"].speed = 0;
+
+            if(ending)
+            {
+                fadeBlackAnimation.gameObject.SetActive(true);
+                if (GameStats.Instance.language == Lang.Eng)
+                {
+                    finalTextField.text = finalEng;
+                    finalTitle.text = finalTitleEng;
+                }
+                else
+                {
+                    finalTextField.text = finalRu;
+                    finalTitle.text = finalTitleRu;
+                }
+
+                transform.parent = fadeBlackAnimation.transform.parent;
+
+                transform.localPosition = Vector3.Lerp(transform.localPosition, Vector3.left * 1.5f, mapFlyToCameraTime);
+                transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(75,0,0), mapFlyToCameraTime);
+                Debug.Log(transform.localRotation.x);
+                if(transform.localRotation.x > 0.608f)
+                {
+                    finalTextField.color = Color.Lerp(finalTextField.color, Color.white, mapFlyToCameraTime);
+                    finalTitle.color = Color.Lerp(finalTitle.color, Color.white, mapFlyToCameraTime);
+
+                }
+            }
+        }
     }
 
     public void ChangeSpeed(float value)
@@ -73,7 +106,8 @@ public class Map : MonoBehaviour
             }
             else
             {
-                Speed -= endReduce;
+                if (Speed > 0)
+                    Speed -= endReduce;
             }
         }
         else
